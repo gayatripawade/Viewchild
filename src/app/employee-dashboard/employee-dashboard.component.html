@@ -1,0 +1,124 @@
+ <nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color:aliceblue">Angular CRUD</h1>
+        <div class="d-flex">
+            <button (click)=" clickAddEmploye()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+        </div>
+    </div>
+</nav>
+
+<!-- <table class="table mt-3 ">
+    <thead>
+        <tr>
+             <th scope="col">Employee ID</th> 
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Date Of Birth</th>
+            <th scope="col">Aawtar</th>
+            <th scope="col">Age</th>
+            <th scope="col">Action</th>
+         
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of employeeData">
+          <td>{{row.id}}</td> 
+           <td>{{row.firstName}}</td>
+            <td>{{row.email}}</td>
+           <td>{{row.Dob}}</td>
+           <td>{{row.aawtar}}</td>
+           <td>{{row.age}}</td>
+            <td>
+                <button (click)="onEdit(row)" class="btn btn-info" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+                <button (click)="deleteemployee(row)" class="btn btn-danger mx-3">Delete</button>
+           </td>
+        </tr>
+    </tbody>
+</table> --> 
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let row of employeeData">
+      <div class="card border-5">
+        <div class="card-body">
+         <p><img src="{{row.image}}" alt="" style="width:150px; 
+          margin-right: auto;
+          margin-left: auto;" class=" d-flex justify-content-center"></p> 
+         
+          <p>Name- {{row.firstName}}</p>
+          <p>Email- {{row.email}}</p>
+          <p>Age- {{row.dob | age}}</p>
+          <p>Country- {{row.country}}</p>
+          
+          <button (click)="onEdit(row)" class="btn btn-info" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button>
+          <button (click)="deleteemployee(row)" class="btn btn-danger mx-3">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Button trigger modal -->
+
+  <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Person Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="formValue" >
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                  <input type="text" formControlName="firstName" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required  />
+                 
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="exampleInputPassword1" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Date of Birth</label>
+                    <input type="date" formControlName="dob" class="form-control" id="exampleInputPassword1" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Image</label>
+                    <input type="text" formControlName="image" class="form-control" id="exampleInputPassword1" >
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Country</label>
+                    <input type="text" formControlName="country" class="form-control" id="exampleInputPassword1" >
+                  </div>
+                
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancel" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" *ngIf="showAdd" class="btn btn-primary"(click)="postEmployeeDetails()">Add</button>
+          <button type="button" *ngIf="showUpdate" class="btn btn-primary"(click)="updateEmployeeDetails()">Update</button>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+  <!-- <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form> -->

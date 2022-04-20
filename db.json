@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "firstName": "gayatri",
+      "email": "gayatri.pawade@waiin.com",
+      "image": "https://clipground.com/images/clipart-profile-6.jpg",
+      "dob": "1998-02-20",
+      "country": "India"
+    },
+    {
+      "id": 2,
+      "firstName": "Vaishnavi",
+      "email": "gayatri.pawade@waiin.com",
+      "image": "https://clipground.com/images/clipart-profile-6.jpg",
+      "dob": "2008-02-20",
+      "country": "India"
+    },
+    {
+      "id": 3,
+      "firstName": "Venu",
+      "email": "gayatri.pawade@waiin.com",
+      "image": "https://clipground.com/images/clipart-profile-6.jpg",
+      "dob": "1998-02-20",
+      "country": "India"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
